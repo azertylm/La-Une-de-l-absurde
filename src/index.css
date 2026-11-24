@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+.shadow-pop {
+  box-shadow: 4px 4px 0px 0px #0f172a;
+}
+
+.dark .shadow-pop {
+  box-shadow: 4px 4px 0px 0px #020617;
+}
+
+.shadow-pop-sm {
+  box-shadow: 2px 2px 0px 0px #0f172a;
+}
+
+.dark .shadow-pop-sm {
+  box-shadow: 2px 2px 0px 0px #020617;
+}
+
+.newsprint-bg {
+  background-color: #faf8f4;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+.dark .newsprint-bg {
+  background-color: #161d2b;
+  background-image: radial-gradient(rgba(226, 232, 240, 0.06) 1px, transparent 0);
+  background-size: 16px 16px;
+}
+
+/* BIG mode scales ONLY main content, keeping Alphabette Double Bar strictly fixed in px */
+.app-main-content {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.app-main-content.big-mode {
+  font-size: 20px;
+  line-height: 1.65;
+}
+
+.app-main-content.big-mode p,
+.app-main-content.big-mode textarea,
+.app-main-content.big-mode label,
+.app-main-content.big-mode figcaption {
+  font-size: 1.05em;
+}
+
+.app-main-content.big-mode .editorial-article {
+  font-size: 19px;
+  line-height: 1.72;
+}
+
+.app-main-content.big-mode .editorial-headline {
+  font-size: 30px;
+  line-height: 1.18;
+}
+
+@keyframes micPulse {
+  0% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 12px rgba(220, 38, 38, 0);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+.mic-recording {
+  animation: micPulse 1.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mic-recording {
+    animation: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+
+  .print-broadsheet {
+    box-shadow: none !important;
+    border-color: #0f172a !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}

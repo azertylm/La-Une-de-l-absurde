@@ -1,0 +1,6 @@
+{
+  "name": "Le Bazar du Jour — La Une de l'Absurde",
+  "description": "Transformez une photo du quotidien et deux phrases banales en scandale de proximité à la Une du journal satirique Le Bazar du Jour.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
